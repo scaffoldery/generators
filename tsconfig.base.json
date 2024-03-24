@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@scaffoldery/node": ["@scaffoldery/node/src/index.ts"]
+      "@scaffoldery/dotnet": ["@scaffoldery/dotnet/src/index.ts"],
+      "@scaffoldery/node": ["@scaffoldery/node/src/index.ts"],
+      "@scaffoldery/python": ["@scaffoldery/python/src/index.ts"],
+      "@scaffoldery/typescript": ["@scaffoldery/typescript/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
