@@ -1,0 +1,48 @@
+{
+  "name": "@scaffoldery/python",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "@scaffoldery/python/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/@scaffoldery/python",
+        "main": "@scaffoldery/python/src/index.ts",
+        "tsConfig": "@scaffoldery/python/tsconfig.lib.json",
+        "assets": [
+          "@scaffoldery/python/*.md",
+          {
+            "input": "./@scaffoldery/python/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./@scaffoldery/python/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./@scaffoldery/python",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./@scaffoldery/python",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "@scaffoldery/python/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
